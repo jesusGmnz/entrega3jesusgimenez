@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/Aplicacion/agendarEnvio" method="POST">{% csrf_token %}
+        <p>Direccion: <input type="text" name="direccion"></p>
+        <p>Fecha de Envio: <input type="date" name="fechaDeEnvio"></p>
+        <p>Enviado: Si<input type="checkbox" value="True" name="enviado">
+        </p>
+
+        <input type="submit" value="Envio Realizado">
+    </form>
+</body>
+</html>

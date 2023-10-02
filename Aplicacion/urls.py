@@ -1,15 +1,19 @@
 from django.urls import path
-from Aplicacion import views
+from .views import *
 
 
 
 urlpatterns = [
     
-    path('inicio', views.inicio, name="Inicio"),
-    path('vendedor',views.vendedor, name="Vendedor"),
-    path('productos',views.producto, name="Productos"),
-    path('cliente',views.cliente, name="Cliente"),
-    path('envios',views.envios, name="Envios"),
-    path('Nuevo_vendedor', views.Nuevo_Vendedor)
+    path('inicio',inicio, name="Inicio"),
+    path('vendedor',vendedor, name="Vendedor"),
+    path('productos',producto, name="Productos"),
+    path('cliente',cliente, name="Cliente"),
+    path('envios',envios, name="Envios"),
+    path('crearVendedor',crearVendedor, name="crearVendedor"),
+    path('agregarProducto',agregarProducto, name="agregarProducto"),
+    path('registroCliente',registroCliente, name="registroCliente" ),
+    path('agendarEnvio',agendarEnvio, name="agendarEnvio"),
+    
     
 ]
