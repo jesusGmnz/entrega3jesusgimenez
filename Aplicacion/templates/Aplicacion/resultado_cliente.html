@@ -1,0 +1,32 @@
+{% extends 'Aplicacion/padre.html' %}
+
+{% block titulo %}
+Resultado de la busqueda
+{% endblock %}
+
+
+
+{% block crear_vendedor %}
+
+{% if res %}
+
+<h1>los Resultado son:</h1>
+
+{% for Cliente in res %}
+<ul>
+    <li>
+        nombre:{{Cliente.nombre}} <br>
+        apellido:{{Cliente.apellido}} <br> 
+        rut:{{Cliente.rut}} <br>
+        email:{{Cliente.email}}
+    </li>
+</ul>
+{% endfor %}
+
+{% else %}
+
+<h1>no hay Resultado que coicidan con la busqueda</h1>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'Aplicacion/padre.html' %}
+
+{% block titulo %}
+Buscar Cliente
+{% endblock %}
+
+
+{% block crear_vendedor %}
+    <form action="/Aplicacion/resultadoCliente" method="GET">{% csrf_token %}
+        <p>nombre:<input type="text" name="nombre"></p>
+
+        
+
+        <input type="submit" value="Buscar">
+
+    </form>
+{% endblock %}

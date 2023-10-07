@@ -14,6 +14,8 @@ urlpatterns = [
     path('agregarProducto',agregarProducto, name="agregarProducto"),
     path('registroCliente',registroCliente, name="registroCliente" ),
     path('agendarEnvio',agendarEnvio, name="agendarEnvio"),
-    
+    path('buscarCliente',buscarCliente, name="buscarCliente"),
+    path('resultadoCliente',resultadoCliente, name="resultadoCliente"),
+    path('borrarVendedor/<vendedor_nombre>/', eliminarVendedor, name="borrarVendedor",),
     
 ]

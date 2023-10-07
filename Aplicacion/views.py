@@ -7,8 +7,11 @@ from .models import *
 def inicio(request):
     return render(request, "Aplicacion/inicio.html")
 
-def vendedor(request):
-    return render(request, "Aplicacion/vendedor.html")
+def vendedor(request):        
+    
+    todos = Vendedor.objects.all()
+    
+    return render(request, "Aplicacion/vendedor.html", {"ven":todos})
 
 def producto(request):
     return render(request, "Aplicacion/producto.html")
@@ -59,3 +62,27 @@ def agendarEnvio(request):
         return render(request, "Aplicacion/inicio.html")
     
     return render(request, "Aplicacion/agendar_envio.html")
+
+def buscarCliente(request):
+    
+    return render(request, "Aplicacion/buscar_cliente.html")
+
+def resultadoCliente(request):
+    
+    if request.GET["nombre"]:
+        
+        nombre = request.GET["nombre"]
+        clienteresultado = Cliente.objects.filter(nombre__icontains=nombre)
+        
+        return render(request, "Aplicacion/resultado_cliente.html", {"valor":nombre, "res":clienteresultado})
+    else:
+        return HttpResponse("No enviaste Datos.")
+    
+    return render(request, "Aplicacion/resultado_cliente.html")
+
+def eliminarVendedor(request, vendedor_nombre):
+    vendedorEliminado = Vendedor.objects.get(nombre= vendedor_nombre)
+    vendedorEliminado.delete()
+    todos = Vendedor.objects.all()
+    
+    return render(request, "Aplicacion/vendedor.html", {"ven":todos})
