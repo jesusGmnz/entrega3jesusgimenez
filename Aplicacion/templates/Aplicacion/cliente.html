@@ -1,5 +1,24 @@
 {% extends 'Aplicacion/padre.html' %}
 
 {% block titulo %}
-Bienvenido Estas en Cliiente
+Bienvenido Estas en Cliente
+<br>
+<a href="{% url 'registroCliente' %}"><button type="button" class="btn btn-secondary btn-lg" >crear cliente</button></a>
+{% endblock %}
+
+
+{% block crear_vendedor %}
+
+
+
+
+{% for Cliente in cliente %}
+    <li style="list-style: none;">
+        nombre: {{Cliente.nombre}} <br> apellido: {{Cliente.apellido}} <br> rut: {{Cliente.rut}} <br> email: {{Cliente.email}} <br>
+        <a href="{% url 'borrarCliente' Cliente.nombre %}"><button style="border-radius: 15px;" type="button" class="btn btn-secondary btn-sm" >eliminar cliente</button></a>
+        <a href="{% url 'editarCliente' Cliente.nombre %}"><button style="border-radius: 15px;" type="button" class="btn btn-secondary btn-sm" >editar cliente</button></a>
+    </li>
+    <br>
+{% endfor %}
+
 {% endblock %}

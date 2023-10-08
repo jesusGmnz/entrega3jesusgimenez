@@ -16,6 +16,8 @@ urlpatterns = [
     path('agendarEnvio',agendarEnvio, name="agendarEnvio"),
     path('buscarCliente',buscarCliente, name="buscarCliente"),
     path('resultadoCliente',resultadoCliente, name="resultadoCliente"),
-    path('borrarVendedor/<vendedor_nombre>/', eliminarVendedor, name="borrarVendedor",),
+    path('borrarVendedor/<vendedor_nombre>/', eliminarVendedor, name="borrarVendedor"),
+    path('borrarCliente/<cliente_nombre>/', eliminarCliente, name="borrarCliente"),
+    path('editarCliente/<cliente_nombre>/', actualizarCliente, name='editarCliente'),
     
 ]

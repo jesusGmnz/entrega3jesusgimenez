@@ -12,9 +12,9 @@ Bienvenido Estas en vendedor
 
 
 {% for Vendedor in ven %}
-    <li>
+    <li style="list-style: none;">
         nombre: {{Vendedor.nombre}} <br> apellido: {{Vendedor.apellido}} <br>
-        <a href="{% url 'borrarVendedor' Vendedor.nombre %}"><button type="button" class="btn btn-secondary btn-sm" >eliminar vendedor</button></a>
+        <a href="{% url 'borrarVendedor' Vendedor.nombre %}"><button style="border-radius: 15px;" type="button" class="btn btn-secondary btn-sm" >eliminar vendedor</button></a>
     </li>
     <br>
 {% endfor %}
